@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h1 class="text-center">Populate</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <span>http://catalog.data.gov/api/3/action/</span>
+        <mat-form-field>
+          <mat-label>select params</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let param of params" [value]="param.value">
+              {{param.value}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button class="btn-update" mat-raised-button>Update</button>
+      </div>
+    </div>
+  </div>
+</div>

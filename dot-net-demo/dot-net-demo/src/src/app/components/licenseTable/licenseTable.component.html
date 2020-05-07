@@ -1,0 +1,51 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="domain_data">
+      <th mat-header-cell *matHeaderCellDef> Domain data </th>
+      <td mat-cell *matCellDef="let element"> <mat-checkbox [disabled]="'true'" [checked]="element.domain_data"></mat-checkbox></td>
+    </ng-container>
+
+    <ng-container matColumnDef="is_okd_compliant">
+      <th mat-header-cell *matHeaderCellDef> Is okd compliant </th>
+      <td mat-cell *matCellDef="let element"> <mat-checkbox [disabled]="'true'" [checked]="element.is_okd_compliant"></mat-checkbox></td>
+    </ng-container>
+
+    <ng-container matColumnDef="is_generic">
+      <th mat-header-cell *matHeaderCellDef> Is generic </th>
+      <td mat-cell *matCellDef="let element"> <mat-checkbox [disabled]="'true'" [checked]="element.is_generic"></mat-checkbox></td>
+    </ng-container>
+
+    <ng-container matColumnDef="is_osi_compliant">
+      <th mat-header-cell *matHeaderCellDef> Is osi compliant </th>
+      <td mat-cell *matCellDef="let element"> <mat-checkbox [disabled]="'true'" [checked]="element.is_osi_compliant"></mat-checkbox></td>
+    </ng-container>
+
+    <ng-container matColumnDef="domain_content">
+      <th mat-header-cell *matHeaderCellDef> Domain content </th>
+      <td mat-cell *matCellDef="let element"> <mat-checkbox [disabled]="'true'" [checked]="element.domain_content"></mat-checkbox></td>
+    </ng-container>
+
+    <ng-container matColumnDef="domain_software">
+      <th mat-header-cell *matHeaderCellDef> Domain software </th>
+      <td mat-cell *matCellDef="let element"> <mat-checkbox [disabled]="'true'" [checked]="element.domain_software"></mat-checkbox></td>
+    </ng-container>
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
