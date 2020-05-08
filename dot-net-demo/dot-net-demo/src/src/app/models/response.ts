@@ -1,4 +1,5 @@
 export class Response {
-  success: boolean;
-  result: any;
+  Success: boolean;
+  Result: any;
+  Error: string;
 }

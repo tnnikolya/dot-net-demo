@@ -19,9 +19,11 @@ export class LicenseTableComponent implements OnInit {
   ngOnInit(): void {
     let licenses = [] as Array<License>;
     this.dataSource = new MatTableDataSource<License>(licenses);
-    this.licenseService.getLicenses().subscribe(_licenses => {
-      this.dataSource = new MatTableDataSource<License>(_licenses);
-      this.dataSource.paginator = this.paginator;
+    this.licenseService.getLicenses().subscribe(_res => {
+      if (_res.Success) {
+        this.dataSource = new MatTableDataSource<License>(_res.Result);
+        this.dataSource.paginator = this.paginator;
+      }
     });
   }
 }

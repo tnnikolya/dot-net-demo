@@ -14,13 +14,13 @@
         <span>http://catalog.data.gov/api/3/action/</span>
         <mat-form-field>
           <mat-label>select params</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="selectedValue">
             <mat-option *ngFor="let param of params" [value]="param.value">
               {{param.value}}
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <button class="btn-update" mat-raised-button>Update</button>
+        <button class="btn-update" (click)="updateDate()" [disabled]="!selectedValue || !unblock" mat-raised-button>Update</button>
       </div>
     </div>
   </div>

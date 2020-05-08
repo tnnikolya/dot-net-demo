@@ -15,6 +15,10 @@ import { LicenseTableComponent } from './components/licenseTable/licenseTable.co
 import { LicenseService } from './components/services/license.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PopulateComponent } from './components/populate/populate.component';
+import { Config } from './config';
+import { HttpClientModule } from '@angular/common/http';
+import { UpdateService } from './components/services/update.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -31,9 +35,11 @@ import { PopulateComponent } from './components/populate/populate.component';
     FormsModule,
     MatSelectModule,
     MatButtonModule,
+    HttpClientModule,
+    MatSnackBarModule,
     DotNetDemoAppRoutingModule
   ],
-  providers: [OrganizationService, LicenseService],
+  providers: [OrganizationService, LicenseService, Config, UpdateService],
   bootstrap: [DotNetDemoAppComponent]
 })
 export class DotNetDemoAppModule { }

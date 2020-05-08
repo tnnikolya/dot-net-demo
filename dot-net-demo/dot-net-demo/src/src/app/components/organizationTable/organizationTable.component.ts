@@ -18,9 +18,11 @@ export class OrganizationTableComponent implements OnInit {
   ngOnInit(): void {
     let organizations = [] as Array<Organization>;
     this.dataSource = new MatTableDataSource<Organization>(organizations);
-    this.organizationService.getOrganizations().subscribe(_organizations => {
-      this.dataSource = new MatTableDataSource<Organization>(_organizations);
-      this.dataSource.paginator = this.paginator;
+    this.organizationService.getOrganizations().subscribe(_res => {
+      if (_res.Success) {
+        this.dataSource = new MatTableDataSource<Organization>(_res.Result);
+        this.dataSource.paginator = this.paginator;
+      }
     });
   }
 }
